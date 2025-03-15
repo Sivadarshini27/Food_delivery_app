@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Montserrat Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <title>Food Delivery App</title>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            font-family: "Montserrat", sans-serif;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .navbar {
+            width: 100%;
+            height: 50px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #1212121b;
+            border: 1px solid #121212;
+        }
+        .nav-brand {
+            height: 80%;
+            padding: 0px 10px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+        }
+        .nav-info {
+            height: 80%;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .nav-info > a {
+            padding: 5px 10px;
+            margin: 3px;
+            text-decoration: none;
+            color: #121212;
+        }
+        .nav-signup {
+            height: 80%;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .nav-signup > img , .nav-signup > button {
+            margin: 10px;
+        }
+        .btn-signup {
+            background-color: #12121200;
+            padding: 5px 15px;
+            border: 1px solid #121212;
+            border-radius: 10px;
+        }
+        .poster {
+            width: 80%;
+            height: 300px;
+            margin: 40px 0px;
+            border-radius: 20px;
+        }
+        .poster-info {
+            width: 100%;
+            height: 300px;
+            border-radius: 20px;
+
+            background-color: seagreen;
+            margin-top: -304px;
+            color: #ffffff;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .expore {
+            width: 80%;
+            /* background-color: salmon; */
+            margin-bottom: 100px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            border-bottom: 1.5px solid #121212;
+        }
+        .expore-items {
+            width: 100%;   
+            height: 190px;    
+            display: flex;     
+            flex-direction: column;    
+            align-items: center; 
+            overflow-y:auto;          
+            padding: 10px ;   
+            gap: 10px; 
+            flex-wrap: wrap;
+        }
+
+        .food-item {
+            width: 120px;
+            height: 100%;
+            margin-right: 20px;
+            padding: 10px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .food-item img{
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50px;
+        }
+        .dishes-container {
+            display:flex;
+            height: 40%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dishes {
+            width: 100%;
+            padding: 10px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .dish {
+            width: 300px;
+            height: 350px;
+            border: 1px solid #121212;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+        }
+        .dish-image {
+            height: 50%;
+        }
+        .dish-container {
+            height: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .dish-info {
+            width: 95%;
+        
+        }
+        .dish-desc {
+            margin-top: -10px;
+            font-size: .9rem;
+        }
+
+        .footer {
+    background-color: #b2a9a9;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+.footer img {
+    height: 0px; 
+}
+
+.footer .footer-links {
+    display: flex;
+    justify-content: space-between;
+    width: 60%; /* Adjust as needed */
+}
+
+.footer .footer-links div {
+    flex: 1;
+}
+
+.footer .footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer .footer-links ul li {
+    margin-bottom: 5px;
+}
+
+.footer .footer-links input[type="email"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.footer .footer-links .social-icons img {
+    height: 20px; /* Adjust as needed */
+    margin-right: 5px;
+}
+
+         @media only screen and (max-width: 600px) {
+            body {
+                background-color:peachpuff;
+            }
+            .nav-info, .poster-info > p{
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-brand">
+            <img src="c:\Users\Admin\Downloads\icons8-real-food-for-meals-48.png">
+            <p>Food Zone</p>
+        </div>
+        <div class="nav-info">
+            <a href="/">Home</a>
+            <a href="/">Menu</a>
+            <a href="/">Contact us</a>
+        </div>
+        <div class="nav-signup">
+            <img src=c:\Users\Admin\Downloads\icons8-cart-30.png />
+            <button class="btn-signup">Sign up</button>
+        </div>
+    </div>
+    <div class="poster">
+        <img src="https://img.freepik.com/premium-photo/various-indian-food-bowls-with-curry-yogurt-rice-bread-chicken-chutney-paneer-cheese_641503-88410.jpg" style="object-fit: cover; width: 100%; height: 100%; border-radius: 20px;"/>
+        <div class="poster-info">
+            <h2>Order your favorite food here</h2>
+
+
+    
+            <p>Choose from a diverse menu featuring a delectable array of dishes crafted with the finest ingredients and culinary expertise.</p>
+            <button class="btn-signup" style="background-color: #ffffff;">View Menu</button>
+        </div>
+    </div>
+    <div class="expore">
+        <h2>Explore our menu</h2>
+        <p>Choose from a diverse menu featuring a delectable array of dishes. Our mission is to satisfy your cravings and elevate your dining experience, one delicious meal at a time.</p>
+        <div class="expore-items">
+            </div>
+        <div class="dishes-container">
+            <h2>Top dishes near you</h2>
+            <div class="dishes">
+                <div class="dish">
+                    <img src="assets/hariyali chicken.jpg" class="dish-image" style="object-fit: cover; width: 100%; height: 60%; border-top-left-radius: 10px; border-top-right-radius: 10px;"/>
+                    <div class="dish-container">
+                        <div class="dish-info" >
+                            <h4>Hariyali chicken</h4>
+                            <p>Food provides essential nutrients for overall health and well-being</p>
+                            <p>₹120</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dish">
+                    <img src="assets/white sauce.jpg" class="dish-image" style="object-fit: cover; width: 100%; height: 60%; border-top-left-radius: 10px; border-top-right-radius: 10px;"/>
+                    <div class="dish-container">
+                        <div class="dish-info" >
+                            <h4>White sauce pasta</h4>
+                            <p>Food provides essential nutrients for overall health and well-being</p>
+                            <p>₹120</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dish">
+                    <img src="assets/pineapp juice.jpg" class="dish-image" style="object-fit: cover; width: 100%; height: 60%; border-top-left-radius: 10px; border-top-right-radius: 10px;"/>
+                    <div class="dish-container">
+                        <div class="dish-info" >
+                            <h4>Pineapple juice</h4>
+                            <p>Food provides essential nutrients for overall health and well-being</p>
+                            <p>₹120</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dish">
+                    <img src="briyani.webp" class="dish-image" style="object-fit: cover; width: 100%; height: 60%; border-top-left-radius: 10px; border-top-right-radius: 10px;"/>
+                    <div class="dish-container">
+                        <div class="dish-info" >
+                            <h4>Chicken Briyani</h4>
+                            <p>Food provides essential nutrients for overall health and well-being</p>
+                            <p>₹120</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dish">
+                    <img src="beautiful-nature-mountain-scenery-with-flowers-picjumbo-com.jpg" class="dish-image" style="object-fit: cover; width: 100%; height: 60%; border-top-left-radius: 10px; border-top-right-radius: 10px;"/>
+                    <div class="dish-container">
+                        <div class="dish-info" >
+                            <h4>Paneer Sandwich</h4>
+                            <p>Food provides essential nutrients for overall health and well-being</p>
+                            <p>₹120</p>
+                        </div>
+                    </div>
+                </div>           </div>
+        </div>   
+    </div>
+                </div>
+                </div>
+                <div class="footer">
+                    <p>Food delivery apps are third-party delivery services hosted on mobile applications that restaurants or retailers partner with to showcase their menu and food offerings, allowing customers to order food and get it delivered to their doorstep. Whether it's fast food or groceries, food delivery apps have revolutionized the restaurant and food delivery industry as they offer customers a convenient way to order food from the comfort of their homes.</p>
+                    <div class="footer-links">
+                        <div>
+                            <strong>Main Links</strong>
+                            <ul>
+                                <li>Order Tracking</li>
+                                <li>New Order</li>
+                                <li>Contact Us</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong>Support</strong>
+                            <ul>
+                                <li>About Us</li>
+                                <li>Privacy Policy</li>
+                                <li>Terms & Conditions</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong>Support</strong>
+                            <input type="email" placeholder="Enter your Email">
+                            <p>Follow Us</p>
+                            <div class="social-icons">
+                                <img src="assets/icons8-facebook-logo-94.png" alt="Facebook">
+                                <img src="assets/icons8-twitter-logo-48.png" alt="Twitter">
+                            </div>
+                            </div>
+            
+
+    <script>  
+        const foodData = {
+        "Salad": [
+            { name: "Veg Salad", price: "₹150", image: "assets/veg salad.jpg" },
+            { name: "Greek  Chicken Salad", price: "₹180", image: "assets/Greek-chicken-salad-recipe-6.jpg" },
+            { name: "Fruit Salad", price: "₹120", image: "assets/fruit salad.jpg" },
+            { name: "Clover Salad", price: "₹220", image: "assets/clover salad.jpeg" },
+            { name:  "Mixed salad" , price: "₹110", image: "assets/mixed salad.jpg" },
+            { name: "Spring-mix Salad", price: "₹135", image: "assets/mixed salad.jpg" }
+        ],
+        "Beverages": [
+            { name: "Lemonade", price: "₹65", image: "assets/lemonade.jpg" },
+            { name: "Green tea", price: "₹30", image: "assets/Tea.jpg" },
+            { name: "Cold coffee", price: "₹100", image: "assets/cold coffee.jpg" },
+            { name: "Coffee", price: "₹75", image: "assets/images (2).jpg" }
+        ],
+        "Dessert": [
+            { name: "Fudgy brownie", price: "₹100", image: "assets/brownie.jpg" },
+            { name: "Choco cake", price: "₹150", image: "assets/choco cake.jpg" },
+            { name: "Ice cream", price: "₹120", image: "assets/ice cream.jpg" },
+            { name: "Milkshake", price: "₹110", image: "assets/istockphoto-1126893721-612x612.jpg" },
+   
+        ],
+        "Sandwich": [
+            { name: "Paneer Sandwich", price: "₹100", image: "assets/paneer-sanwich-final.jpg" },
+            { name: "Club Sandwich", price: "₹75", image: "assets/club-sandwich.avif" },
+            { name: "Corn cheese", price: "₹80", image: "assets/corn cheese sand.jpg" },
+            { name: "Veg toast Sandwich", price: "₹70", image: "assets/veg toast sand.jpg" },
+           
+        ],
+        "Chicken": [
+            { name: "Hariyali chicken", price: "₹250", image: "assets/hariyali chicken.jpg" },
+            { name: "Chicken shawarma", price: "₹100", image: "assets/Chicken-Shawarma.jpg" },
+            { name: "Chicken curry", price: "₹300", image: "assets/chick curry.jpg" },
+            { name: "Chicken tandoori", price: "₹250", image: "assets/images (4).jpg" },
+       
+
+        ],
+        "Rice": [
+            { name: "Chicken briyani", price: "₹220", image: "briyani.webp" },
+            { name: "Chicken fried rice", price: "₹140", image: "assets/chick fried rice.png" },
+            { name: "Jeera rice", price: "₹170", image: "assets/jeera-rice-recipe.jpg" },
+            { name:"Veg briyani",price:"₹150",image:"assets/veg briyani.jpg"}
+
+        ],
+        "Pasta": [
+            { name: "Mac n Cheese", price: "₹200", image: "assets/mac cheese.jpg" },
+            { name: "Indian pasta", price: "₹210", image: "assets/ind pasata.jpg" },
+            { name: "Red Sauce Pasta", price: "₹175", image: "assets/red sauce pasta.jpg" },
+            { name: "White sauce pasta", price: "₹230", image: "assets/white sauce.jpg" },
+       
+        ],
+        "Juice": [
+            { name: "Watermelon juice", price: "₹45", image: "assets/watermelon juice.jpg" },
+            { name: "Mango juice", price: "₹70", image: "assets/mango-frooti.jpg" },
+            { name: "Pineapple juice", price: "₹60", image: "assets/pineapp juice.jpg" },
+            { name: "Orange juice", price: "₹50", image: "assets/orange juice.jpg" },
+            { name: "Strawberry juice", price: "₹80", image: "assets/Strawberry-Juice.jpg" }
+        ]
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const imageSrc = ["assets/menu_1-CpSfC1Ff.webp", "assets/images (2).jpg", "assets/istockphoto-1126893721-612x612.jpg", "assets/menu_4-CpXAwO71.webp", "assets/images (4).jpg", "assets/images (3).jpg", "assets/white sauce.jpg", "assets/images (1).jpg"];
+        const names = ["Salad", "Beverages", "Dessert", "Sandwich", "Chicken", "Rice", "Pasta", "Juice"];
+
+        let htmlData = "";
+        for (let i = 0; i < imageSrc.length; i++) {
+            htmlData += `
+                <div class="food-item" onclick="showDishes('${names[i]}')">
+                    <img src="${imageSrc[i]}" style="width: 150px; height: 120px; cursor: pointer;"/>
+                    <p>${names[i]}</p>
+                </div>
+            `;
+        }
+        document.querySelector(".expore-items").innerHTML = htmlData;
+    });
+    function showDishes(category) {
+        const dishesContainer = document.querySelector(".dishes");
+        let dishesHTML = "";
+
+        if (foodData[category]) {
+            foodData[category].forEach(dish => {
+                dishesHTML += `
+                    <div class="dish">
+                        <img src="${dish.image}" class="dish-image" style="object-fit: cover; width: 100%; height: 60%; border-top-left-radius: 10px; border-top-right-radius: 10px;"/>
+                        <div class="dish-container">
+                            <div class="dish-info">
+                                <h4>${dish.name}</h4>
+                                <p>${dish.price}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        dishesContainer.innerHTML = dishesHTML;
+    }
+
+
+    </script>
+</body>
+</html>
+
